@@ -393,17 +393,14 @@ h3 {
   transform-origin: 395px 10px;
 }
 
-/* Waves twice, rests, repeats */
+/* Waves continuously */
 .wave-arm {
-  animation: wave 3s ease-in-out infinite;
+  animation: wave 1s ease-in-out infinite;
 }
 
 @keyframes wave {
-  0%, 50%, 100% { transform: rotate(0deg); }
-  10% { transform: rotate(-22deg); }
-  20% { transform: rotate(16deg); }
-  30% { transform: rotate(-22deg); }
-  40% { transform: rotate(16deg); }
+  0%, 100% { transform: rotate(-22deg); }
+  50% { transform: rotate(16deg); }
 }
 
 .hero-grid {
