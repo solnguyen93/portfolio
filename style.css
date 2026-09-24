@@ -423,6 +423,13 @@ h3 {
   border-top: none;
 }
 
+.education-note {
+  max-width: 620px;
+  margin: 8px 0 0;
+  font-size: 15.5px;
+  color: var(--text-muted);
+}
+
 .education-date {
   flex-shrink: 0;
   font-size: 14px;
