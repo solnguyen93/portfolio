@@ -360,30 +360,37 @@ h3 {
 /* iPhone-style frame around the live demo. The app renders at a real
    iPhone viewport (390x844) and is scaled down to fit the frame. */
 .phone {
+  --phone-frame: #5e1a2a;       /* burgundy titanium */
+  --phone-frame-light: #8a3345; /* edge highlight */
+  --phone-frame-dark: #3d0f1a;  /* edge shadow */
   position: relative;
   padding: 12px;
   background: #0b0b0d;
   border-radius: 52px;
-  box-shadow: 0 0 0 2px #2c2c31, var(--shadow-hover);
+  box-shadow:
+    0 0 0 7px var(--phone-frame),
+    0 0 0 8px var(--phone-frame-light),
+    0 0 0 10px var(--phone-frame-dark),
+    var(--shadow-hover);
 }
 
 .phone::before,
 .phone::after {
   content: "";
   position: absolute;
-  width: 3px;
-  background: #2c2c31;
+  width: 4px;
+  background: linear-gradient(90deg, var(--phone-frame-dark), var(--phone-frame-light));
   border-radius: 2px;
 }
 
 .phone::before {
-  left: -5px;
+  left: -13px;
   top: 120px;
   height: 60px;
 }
 
 .phone::after {
-  right: -5px;
+  right: -13px;
   top: 150px;
   height: 90px;
 }
