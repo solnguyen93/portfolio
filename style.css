@@ -311,7 +311,7 @@ h3 {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 56px;
+  gap: 96px;
 }
 
 .avatar-figure {
@@ -319,6 +319,33 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
   width: 400px;
+}
+
+/* "Hi, I'm" as a hand-drawn speech bubble pointing at the photo */
+.speech {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 8px 18px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  background: var(--bg);
+  border: 2.5px solid var(--text);
+  border-radius: 20px;
+}
+
+.speech::after {
+  content: "";
+  position: absolute;
+  left: -9px;
+  bottom: 10px;
+  width: 14px;
+  height: 14px;
+  background: var(--bg);
+  border-left: 2.5px solid var(--text);
+  border-bottom: 2.5px solid var(--text);
+  transform: rotate(45deg);
 }
 
 .avatar {
@@ -365,7 +392,7 @@ h3 {
 
 .wave-arm {
   transform-box: view-box;
-  transform-origin: 300px 24px;
+  transform-origin: 395px 10px;
 }
 
 /* Waves twice, rests, repeats */
@@ -375,10 +402,10 @@ h3 {
 
 @keyframes wave {
   0%, 50%, 100% { transform: rotate(0deg); }
-  10% { transform: rotate(-20deg); }
-  20% { transform: rotate(12deg); }
-  30% { transform: rotate(-20deg); }
-  40% { transform: rotate(12deg); }
+  10% { transform: rotate(-22deg); }
+  20% { transform: rotate(16deg); }
+  30% { transform: rotate(-22deg); }
+  40% { transform: rotate(16deg); }
 }
 
 .hero-grid {
@@ -420,8 +447,12 @@ h3 {
 
 .featured-desc {
   max-width: 480px;
-  margin: 14px 0 20px;
+  margin: 14px 0 0;
   color: var(--text-muted);
+}
+
+.featured-desc + .skill-list {
+  margin-top: 22px;
 }
 
 .featured-links {
@@ -567,6 +598,13 @@ h3 {
   .avatar-figure {
     zoom: 0.72;
     margin-top: 40px;
+  }
+
+  .speech::after {
+    left: 24px;
+    bottom: auto;
+    top: -9px;
+    transform: rotate(135deg);
   }
 
   .phone {
