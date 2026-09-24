@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -56,9 +56,21 @@
       </div>
 
       <div class="phone" aria-label="Live ChronoRoam demo">
+        <span class="phone-btn phone-btn-action"></span>
+        <span class="phone-btn phone-btn-vol-up"></span>
+        <span class="phone-btn phone-btn-vol-down"></span>
+        <span class="phone-btn phone-btn-side"></span>
         <div class="phone-screen">
-          <p class="phone-loading">Loading ChronoRoam&hellip;</p>
-          <iframe data-src="https://chronoroam.app" title="ChronoRoam live demo" loading="lazy"></iframe>
+          <div class="phone-display">
+            <div class="phone-status">
+              <span class="phone-time">9:41</span>
+              <span class="phone-island"></span>
+            </div>
+            <div class="phone-viewport">
+              <p class="phone-loading">Loading ChronoRoam&hellip;</p>
+              <iframe data-src="https://chronoroam.app" title="ChronoRoam live demo" loading="lazy"></iframe>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -357,63 +357,105 @@ h3 {
   margin-top: 24px;
 }
 
-/* iPhone-style frame around the live demo. The app renders at a real
-   iPhone viewport (390x844) and is scaled down to fit the frame. */
+/* iPhone-style frame around the live demo, colors sampled from a
+   burgundy iPhone Pro. The display is laid out at real iPhone size
+   (390x844 points) and scaled to 80% on normal-height screens. */
 .phone {
-  --phone-frame: #5e1a2a;       /* burgundy titanium */
-  --phone-frame-light: #8a3345; /* edge highlight */
-  --phone-frame-dark: #3d0f1a;  /* edge shadow */
+  --frame: #5d383f;
+  --frame-light: #8e656d;
+  --frame-dark: #2b0b12;
+  --frame-inner: #3e2228;
+  --scale: 0.8;
   position: relative;
   padding: 5px;
-  background: #0b0b0d;
-  border-radius: 45px;
+  background: #050203;
+  border-radius: 50px;
   box-shadow:
-    0 0 0 7px var(--phone-frame),
-    0 0 0 8px var(--phone-frame-light),
-    0 0 0 10px var(--phone-frame-dark),
+    0 0 0 1px var(--frame-inner),
+    0 0 0 3px var(--frame-light),
+    0 0 0 5px var(--frame),
+    0 0 0 6px var(--frame-dark),
     var(--shadow-hover);
 }
 
-.phone::before,
-.phone::after {
-  content: "";
+.phone-btn {
   position: absolute;
-  width: 4px;
-  background: linear-gradient(90deg, var(--phone-frame-dark), var(--phone-frame-light));
+  width: 3px;
+  background: linear-gradient(90deg, var(--frame-dark), var(--frame-light) 60%, var(--frame));
   border-radius: 2px;
 }
 
-/* Left side: volume up, with volume down cloned below it via box-shadow */
-.phone::before {
-  left: -13px;
-  top: 140px;
-  height: 52px;
-  background: var(--phone-frame-light);
-  box-shadow: 0 66px 0 var(--phone-frame-light);
+.phone-btn-action,
+.phone-btn-vol-up,
+.phone-btn-vol-down {
+  left: -9px;
 }
 
-.phone::after {
-  right: -13px;
-  top: 150px;
-  height: 90px;
+.phone-btn-side {
+  right: -9px;
+  background: linear-gradient(270deg, var(--frame-dark), var(--frame-light) 60%, var(--frame));
 }
+
+.phone-btn-action   { top: calc(150px * var(--scale) / 0.8); height: calc(34px * var(--scale) / 0.8); }
+.phone-btn-vol-up   { top: calc(208px * var(--scale) / 0.8); height: calc(44px * var(--scale) / 0.8); }
+.phone-btn-vol-down { top: calc(270px * var(--scale) / 0.8); height: calc(44px * var(--scale) / 0.8); }
+.phone-btn-side     { top: calc(225px * var(--scale) / 0.8); height: calc(70px * var(--scale) / 0.8); }
 
 .phone-screen {
-  position: relative;
-  width: 312px;
-  height: 675px;
+  width: calc(390px * var(--scale));
+  height: calc(844px * var(--scale));
   overflow: hidden;
-  background: #f5f2ea;
-  border-radius: 40px;
+  background: #f4ecdb;
+  border-radius: 45px;
 }
 
-.phone-screen iframe {
-  position: relative;
+.phone-display {
+  display: flex;
+  flex-direction: column;
   width: 390px;
   height: 844px;
-  border: 0;
-  transform: scale(0.8);
+  transform: scale(var(--scale));
   transform-origin: 0 0;
+}
+
+.phone-status {
+  position: relative;
+  flex-shrink: 0;
+  height: 54px;
+  background: #f4ecdb;
+}
+
+.phone-time {
+  position: absolute;
+  left: 44px;
+  top: 17px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #111;
+}
+
+.phone-island {
+  position: absolute;
+  left: 50%;
+  top: 11px;
+  width: 124px;
+  height: 36px;
+  background: #000;
+  border-radius: 20px;
+  transform: translateX(-50%);
+}
+
+.phone-viewport {
+  position: relative;
+  flex: 1;
+}
+
+.phone-viewport iframe {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .phone-loading {
@@ -422,24 +464,19 @@ h3 {
   display: grid;
   place-items: center;
   margin: 0;
-  font-size: 14px;
+  font-size: 17px;
   color: #57575f;
 }
 
-/* Tall screens: show the demo at true iPhone size (390x844) */
+/* Tall screens: show the demo at true iPhone size */
 @media (min-height: 1000px) {
   .phone {
-    border-radius: 53px;
+    --scale: 1;
+    border-radius: 58px;
   }
 
   .phone-screen {
-    width: 390px;
-    height: 844px;
-    border-radius: 48px;
-  }
-
-  .phone-screen iframe {
-    transform: none;
+    border-radius: 53px;
   }
 }
 
