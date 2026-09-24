@@ -28,33 +28,23 @@
 
   <!-- ============ HERO ============ -->
   <section id="top" class="hero">
-    <div class="container">
-      <p class="eyebrow">Hi, I'm</p>
-      <h1>Sol Nguyen</h1>
-      <p class="tagline">Full-stack developer</p>
-      <ul class="hero-roles">
-        <li>Parent</li>
-        <li>Caregiver</li>
-        <li>Traveler</li>
-      </ul>
-      <p class="hero-sub">I build web apps end to end, from the database to the interface. Travel keeps sneaking into my code: ChronoRoam, TripCheck and FlightCast all started as trip-planning headaches I wanted to fix.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#projects">View projects</a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
-      </div>
-    </div>
-  </section>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">Hi, I'm</p>
+        <h1>Sol Nguyen</h1>
+        <p class="tagline">Full-stack developer</p>
+        <ul class="hero-roles">
+          <li>Parent</li>
+          <li>Caregiver</li>
+          <li>Traveler</li>
+        </ul>
+        <p class="hero-sub">I build web apps end to end, from the database to the interface.</p>
 
-  <!-- ============ PROJECTS ============ -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-
-      <article class="featured">
-        <div class="featured-text">
-          <p class="featured-label">Latest project</p>
-          <h3>ChronoRoam</h3>
-          <p>A trip planner built around a day-by-day itinerary. Forward a booking email and AI adds it to your trip. Available on the web and iOS.</p>
+        <div class="featured">
+          <p class="featured-intro">Check out my latest and proudest creation:</p>
+          <h2 class="featured-name">ChronoRoam</h2>
+          <p class="featured-meaning"><strong>Chrono</strong> for time, <strong>roam</strong> for travel.</p>
+          <p class="featured-desc">A trip planner built around a day-by-day itinerary. Forward a booking email and AI adds it to your trip. On the web and iOS.</p>
           <ul class="skill-list">
             <li>React</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Claude &amp; OpenAI</li><li>Stripe</li><li>iOS (Capacitor)</li>
           </ul>
@@ -62,18 +52,23 @@
             <a class="btn btn-primary" href="https://chronoroam.app" target="_blank" rel="noopener noreferrer">Visit chronoroam.app</a>
             <a class="btn btn-ghost" href="https://github.com/solnguyen93/ChronoRoam" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
           </div>
-          <p class="featured-hint">Try it live on the phone: tap <strong>Create Account</strong>, then <strong>Continue as guest</strong>.</p>
+          <p class="featured-hint">Try it on the phone: tap <strong>Create Account</strong>, then <strong>Continue as guest</strong>.</p>
         </div>
+      </div>
 
-        <div class="phone" aria-label="Live ChronoRoam demo">
-          <div class="phone-screen">
-            <p class="phone-loading">Loading ChronoRoam&hellip;</p>
-            <iframe data-src="https://chronoroam.app" title="ChronoRoam live demo" loading="lazy"></iframe>
-          </div>
+      <div class="phone" aria-label="Live ChronoRoam demo">
+        <div class="phone-screen">
+          <p class="phone-loading">Loading ChronoRoam&hellip;</p>
+          <iframe data-src="https://chronoroam.app" title="ChronoRoam live demo" loading="lazy"></iframe>
         </div>
-      </article>
+      </div>
+    </div>
+  </section>
 
-      <h3 class="subsection-title">More projects</h3>
+  <!-- ============ OTHER PROJECTS ============ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Other Projects</h2>
       <div class="project-grid">
 
         <article class="project-card">

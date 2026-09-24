@@ -127,7 +127,7 @@ h3 {
 
 /* ============ Hero ============ */
 .hero {
-  padding: 120px 0 100px;
+  padding: 96px 0 88px;
 }
 
 .eyebrow {
@@ -179,13 +179,6 @@ h3 {
   margin: 24px 0 0;
   font-size: 1.1rem;
   color: var(--text-muted);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 36px;
 }
 
 .btn {
@@ -313,37 +306,47 @@ h3 {
   color: var(--text-muted);
 }
 
-/* ============ Featured project ============ */
-.featured {
+/* ============ Hero layout + featured project ============ */
+.hero-grid {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 48px;
-  margin-bottom: 72px;
+  gap: 56px;
 }
 
-.featured-label {
-  display: inline-block;
-  margin: 0 0 12px;
-  padding: 4px 12px;
-  font-size: 13px;
+.featured {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.featured-intro {
+  margin: 0 0 6px;
+  font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--accent);
-  background: var(--accent-soft);
-  border-radius: 999px;
 }
 
-.featured h3 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+.featured-name {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 800;
 }
 
-.featured-text > p:not(.featured-label):not(.featured-hint) {
+.featured-meaning {
+  margin: 6px 0 0;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.featured-meaning strong {
+  font-style: normal;
+  color: var(--text);
+}
+
+.featured-desc {
   max-width: 480px;
-  margin: 14px 0 22px;
-  font-size: 1.1rem;
+  margin: 14px 0 20px;
   color: var(--text-muted);
 }
 
@@ -351,19 +354,13 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .featured-hint {
-  margin: 20px 0 0;
+  margin: 16px 0 0;
   font-size: 14px;
   color: var(--text-muted);
-}
-
-.subsection-title {
-  margin-bottom: 24px;
-  font-size: 1.25rem;
-  font-weight: 700;
 }
 
 /* iPhone-style frame around the live demo. The app renders at a real
@@ -426,7 +423,7 @@ h3 {
 }
 
 @media (max-width: 899px) {
-  .featured {
+  .hero-grid {
     grid-template-columns: 1fr;
   }
 
