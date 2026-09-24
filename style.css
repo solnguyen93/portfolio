@@ -433,6 +433,11 @@ h3 {
   }
 }
 
+.more-work {
+  margin: 28px 0 0;
+  font-weight: 600;
+}
+
 /* ============ About ============ */
 .about-text {
   max-width: 680px;
