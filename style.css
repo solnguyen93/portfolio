@@ -219,28 +219,13 @@ h3 {
   border-color: var(--text-muted);
 }
 
+/* Not clickable until the App Store link exists */
 .btn-soon {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--text-muted);
   cursor: default;
 }
 
 .btn-soon:hover {
-  color: var(--text-muted);
   border-color: var(--border);
-}
-
-.soon-tag {
-  padding: 2px 8px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-soft);
-  border-radius: 999px;
 }
 
 /* ============ Sections ============ */
