@@ -317,8 +317,8 @@ h3 {
 .avatar-figure {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 260px;
+  align-items: flex-start;
+  width: 400px;
 }
 
 .avatar {
@@ -328,61 +328,44 @@ h3 {
   width: 200px;
   height: 200px;
   object-fit: cover;
+  margin-left: 200px;
   border-radius: 50%;
   box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--accent-soft);
 }
 
 .stick-body {
-  width: 260px;
+  width: 400px;
   height: auto;
   margin-top: -2px;
   overflow: visible;
 }
 
-.fig-outline {
+.fig-line {
+  fill: none;
   stroke: var(--text);
   stroke-width: 3;
+  stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-.fig-limb {
-  fill: none;
-  stroke: var(--text);
-  stroke-width: 6;
-  stroke-linecap: round;
-}
-
-.fig-hand,
-.fig-button {
+.fig-hand {
   fill: var(--text);
 }
 
-.fig-blazer {
-  fill: #b9bcc1;
+/* The kid gives a little hop now and then */
+.kid {
+  animation: hop 3s ease-in-out infinite;
 }
 
-.fig-shirt {
-  fill: #ffffff;
-}
-
-.fig-pants {
-  fill: #2f3440;
-}
-
-.fig-shoe {
-  fill: #1b1d22;
-}
-
-.fig-detail {
-  fill: none;
-  stroke: #6f737a;
-  stroke-width: 2;
-  stroke-linecap: round;
+@keyframes hop {
+  0%, 60%, 100% { transform: translateY(0); }
+  70% { transform: translateY(-4px); }
+  80% { transform: translateY(0); }
 }
 
 .wave-arm {
   transform-box: view-box;
-  transform-origin: 74px 46px;
+  transform-origin: 300px 24px;
 }
 
 /* Waves twice, rests, repeats */
@@ -582,16 +565,8 @@ h3 {
   }
 
   .avatar-figure {
-    width: 190px;
-  }
-
-  .avatar {
-    width: 140px;
-    height: 140px;
-  }
-
-  .stick-body {
-    width: 190px;
+    zoom: 0.72;
+    margin-top: 40px;
   }
 
   .phone {
@@ -868,7 +843,8 @@ h3 {
     transition: none !important;
   }
 
-  .wave-arm {
+  .wave-arm,
+  .kid {
     animation: none;
   }
 }

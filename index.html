@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -32,26 +32,50 @@
       <div class="intro">
         <div class="avatar-figure">
           <img class="avatar" src="avatar.jpg" alt="Sol Nguyen" width="200" height="200">
-          <!-- Stick-figure body dressed like the photo (grey blazer, white shirt); the left arm waves -->
-          <svg class="stick-body" viewBox="0 0 260 225" aria-hidden="true">
-            <!-- arms (drawn first so the sleeves overlap them) -->
-            <g class="wave-arm">
-              <path class="fig-limb" d="M74 46 Q56 22 44 -8" />
-              <circle class="fig-hand" cx="41" cy="-16" r="8" />
+          <!-- Line-drawn family: mom and daughter (long hair, triangle dresses) holding hands with Sol, who waves -->
+          <svg class="stick-body" viewBox="0 0 400 230" aria-hidden="true">
+            <!-- Mom -->
+            <circle class="fig-line" cx="70" cy="-44" r="26" />
+            <path class="fig-line" d="M44 -46 Q44 -73 70 -73 Q96 -73 96 -46" />
+            <path class="fig-line" d="M45 -44 Q38 -18 47 0" />
+            <path class="fig-line" d="M95 -44 Q102 -18 93 0" />
+            <path class="fig-line" d="M70 -18 L36 100 L104 100 Z" />
+            <path class="fig-line" d="M64 -4 Q40 30 16 58" />
+            <circle class="fig-hand" cx="12" cy="62" r="7" />
+            <path class="fig-line" d="M76 -4 Q104 40 124 94" />
+            <circle class="fig-hand" cx="127" cy="100" r="7" />
+            <path class="fig-line" d="M58 100 L56 212" />
+            <path class="fig-line" d="M82 100 L84 212" />
+            <ellipse class="fig-line" cx="46" cy="217" rx="15" ry="5" />
+            <ellipse class="fig-line" cx="94" cy="217" rx="15" ry="5" />
+
+            <!-- Daughter, holding both hands and kicking a leg -->
+            <g class="kid">
+              <circle class="fig-line" cx="178" cy="120" r="19" />
+              <path class="fig-line" d="M159 118 Q159 99 178 99 Q197 99 197 118" />
+              <path class="fig-line" d="M159 118 Q153 138 160 154" />
+              <path class="fig-line" d="M197 118 Q203 138 196 154" />
+              <path class="fig-line" d="M178 139 L158 182 L198 182 Z" />
+              <path class="fig-line" d="M175 148 Q150 132 132 106" />
+              <path class="fig-line" d="M181 148 Q206 132 224 104" />
+              <path class="fig-line" d="M171 182 L169 214" />
+              <ellipse class="fig-line" cx="161" cy="218" rx="11" ry="4" />
+              <path class="fig-line" d="M185 182 Q197 188 201 199" />
+              <ellipse class="fig-line" cx="206" cy="199" rx="10" ry="4" transform="rotate(-35 206 199)" />
             </g>
-            <path class="fig-limb" d="M186 46 Q208 66 222 94" />
-            <circle class="fig-hand" cx="225" cy="101" r="8" />
-            <!-- trousers and shoes -->
-            <path class="fig-pants fig-outline" d="M95 108 L91 200 L124 200 L130 140 L136 200 L169 200 L165 108 Z" />
-            <ellipse class="fig-shoe fig-outline" cx="104" cy="206" rx="19" ry="7" />
-            <ellipse class="fig-shoe fig-outline" cx="156" cy="206" rx="19" ry="7" />
-            <!-- blazer with short sleeves -->
-            <path class="fig-blazer fig-outline" d="M100 8 Q130 2 160 8 L178 16 Q187 21 189 31 L193 52 L172 57 L168 44 L166 110 L94 110 L92 44 L88 57 L67 52 L71 31 Q73 21 82 16 Z" />
-            <!-- white shirt and collar showing at the neck -->
-            <path class="fig-shirt fig-outline" d="M113 7 L130 44 L147 7 Q130 3 113 7 Z" />
-            <!-- lapels and a button -->
-            <path class="fig-detail" d="M113 7 L124 56 M147 7 L136 56" />
-            <circle class="fig-button" cx="130" cy="74" r="3" />
+
+            <!-- Sol -->
+            <path class="fig-line" d="M300 0 Q298 60 300 122" />
+            <g class="wave-arm">
+              <path class="fig-line" d="M300 24 Q352 22 392 -16" />
+              <circle class="fig-hand" cx="397" cy="-22" r="7" />
+            </g>
+            <path class="fig-line" d="M300 24 Q262 58 232 94" />
+            <circle class="fig-hand" cx="228" cy="99" r="7" />
+            <path class="fig-line" d="M300 122 Q291 170 283 214" />
+            <path class="fig-line" d="M300 122 Q310 170 318 214" />
+            <ellipse class="fig-line" cx="270" cy="219" rx="17" ry="5" />
+            <ellipse class="fig-line" cx="331" cy="219" rx="17" ry="5" />
           </svg>
         </div>
         <div class="intro-text">
