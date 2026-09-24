@@ -357,12 +357,6 @@ h3 {
   margin-top: 24px;
 }
 
-.featured-hint {
-  margin: 16px 0 0;
-  font-size: 14px;
-  color: var(--text-muted);
-}
-
 /* iPhone-style frame around the live demo. The app renders at a real
    iPhone viewport (390x844) and is scaled down to fit the frame. */
 .phone {
@@ -440,8 +434,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .phone,
-  .featured-hint {
+  .phone {
     display: none;
   }
 }
