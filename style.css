@@ -422,6 +422,19 @@ h3 {
   color: #57575f;
 }
 
+/* Tall screens: show the demo at true iPhone size (390x844) */
+@media (min-height: 1000px) {
+  .phone-screen {
+    width: 390px;
+    height: 844px;
+    border-radius: 48px;
+  }
+
+  .phone-screen iframe {
+    transform: none;
+  }
+}
+
 @media (max-width: 899px) {
   .hero-grid {
     grid-template-columns: 1fr;

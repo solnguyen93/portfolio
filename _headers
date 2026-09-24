@@ -1,0 +1,3 @@
+# Always revalidate CSS/JS so a new deploy never pairs fresh HTML with a stale stylesheet.
+/*.css
+  Cache-Control: public, max-age=0, must-revalidate
