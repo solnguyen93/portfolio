@@ -334,19 +334,55 @@ h3 {
 
 .stick-body {
   width: 260px;
-  height: 140px;
+  height: auto;
   margin-top: -2px;
   overflow: visible;
-  fill: none;
-  stroke: var(--text-muted);
-  stroke-width: 2.5;
-  stroke-linecap: round;
+}
+
+.fig-outline {
+  stroke: var(--text);
+  stroke-width: 3;
   stroke-linejoin: round;
+}
+
+.fig-limb {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.fig-hand,
+.fig-button {
+  fill: var(--text);
+}
+
+.fig-blazer {
+  fill: #b9bcc1;
+}
+
+.fig-shirt {
+  fill: #ffffff;
+}
+
+.fig-pants {
+  fill: #2f3440;
+}
+
+.fig-shoe {
+  fill: #1b1d22;
+}
+
+.fig-detail {
+  fill: none;
+  stroke: #6f737a;
+  stroke-width: 2;
+  stroke-linecap: round;
 }
 
 .wave-arm {
   transform-box: view-box;
-  transform-origin: 78px 22px;
+  transform-origin: 74px 46px;
 }
 
 /* Waves twice, rests, repeats */
@@ -556,7 +592,6 @@ h3 {
 
   .stick-body {
     width: 190px;
-    height: 102px;
   }
 
   .phone {
