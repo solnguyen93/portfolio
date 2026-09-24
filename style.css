@@ -383,10 +383,13 @@ h3 {
   border-radius: 2px;
 }
 
+/* Left side: volume up, with volume down cloned below it via box-shadow */
 .phone::before {
   left: -13px;
-  top: 120px;
-  height: 60px;
+  top: 140px;
+  height: 52px;
+  background: var(--phone-frame-light);
+  box-shadow: 0 66px 0 var(--phone-frame-light);
 }
 
 .phone::after {
