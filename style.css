@@ -403,17 +403,6 @@ h3 {
   fill: var(--text);
 }
 
-/* The kid gives a little hop now and then */
-.kid {
-  animation: hop 3s ease-in-out infinite;
-}
-
-@keyframes hop {
-  0%, 60%, 100% { transform: translateY(0); }
-  70% { transform: translateY(-4px); }
-  80% { transform: translateY(0); }
-}
-
 .wave-arm {
   transform-box: view-box;
   transform-origin: 395px 10px;
@@ -905,8 +894,7 @@ h3 {
     transition: none !important;
   }
 
-  .wave-arm,
-  .kid {
+  .wave-arm {
     animation: none;
   }
 }
