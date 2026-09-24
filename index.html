@@ -50,19 +50,31 @@
     <div class="container">
       <h2 class="section-title">Projects</h2>
 
-      <div class="project-grid">
+      <article class="featured">
+        <div class="featured-text">
+          <p class="featured-label">Latest project</p>
+          <h3>ChronoRoam</h3>
+          <p>A trip planner built around a day-by-day itinerary. Forward a booking email and AI adds it to your trip. Available on the web and iOS.</p>
+          <ul class="skill-list">
+            <li>React</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Claude &amp; OpenAI</li><li>Stripe</li><li>iOS (Capacitor)</li>
+          </ul>
+          <div class="featured-links">
+            <a class="btn btn-primary" href="https://chronoroam.app" target="_blank" rel="noopener noreferrer">Visit chronoroam.app</a>
+            <a class="btn btn-ghost" href="https://github.com/solnguyen93/ChronoRoam" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+          </div>
+          <p class="featured-hint">Try it live on the phone: tap <strong>Create Account</strong>, then <strong>Continue as guest</strong>.</p>
+        </div>
 
-        <!-- Project card: duplicate this <article> block for each additional project -->
-        <article class="project-card">
-          <div class="project-card-body">
-            <h3>ChronoRoam</h3>
-            <p>A trip-planning app built around a day-by-day itinerary — flights, lodging, and activities, with AI-assisted extraction from forwarded confirmation emails, destination travel tips, and shared packing lists.</p>
+        <div class="phone" aria-label="Live ChronoRoam demo">
+          <div class="phone-screen">
+            <p class="phone-loading">Loading ChronoRoam&hellip;</p>
+            <iframe data-src="https://chronoroam.app" title="ChronoRoam live demo" loading="lazy"></iframe>
           </div>
-          <div class="project-card-footer">
-            <a class="project-link" href="https://chronoroam.app" target="_blank" rel="noopener noreferrer">Visit chronoroam.app &rarr;</a>
-            <a class="project-link project-link-secondary" href="https://github.com/solnguyen93/ChronoRoam" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
-          </div>
-        </article>
+        </div>
+      </article>
+
+      <h3 class="subsection-title">More projects</h3>
+      <div class="project-grid">
 
         <article class="project-card">
           <div class="project-card-body">
@@ -249,6 +261,13 @@
     <p>&copy; 2026 Sol Nguyen.</p>
   </div>
 </footer>
+
+<script>
+  // Only load the live demo where the phone frame is visible (it's hidden on small screens).
+  if (window.matchMedia('(min-width: 900px)').matches) {
+    document.querySelectorAll('iframe[data-src]').forEach(function (f) { f.src = f.dataset.src; });
+  }
+</script>
 
 </body>
 </html>
