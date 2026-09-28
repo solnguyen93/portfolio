@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
 
@@ -106,6 +106,16 @@
           <ul class="skill-list">
             <li>React</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Claude &amp; OpenAI</li><li>Stripe</li><li>iOS (Capacitor)</li>
           </ul>
+          <details class="built">
+            <summary>How it's built</summary>
+            <ul>
+              <li>React web app, wrapped with Capacitor to ship the same code as a native iOS app</li>
+              <li>Node.js/Express API on Render with PostgreSQL</li>
+              <li>Forwarded emails arrive through a Cloudflare Email Worker; AI extracts the booking with a low-cost model first, checks the result for errors and falls back to Claude when needed</li>
+              <li>Destination tips are cached and shared across users, which keeps AI costs flat as the app grows</li>
+              <li>Payments through Stripe (web) and Apple In-App Purchase (iOS), both verified on the server</li>
+            </ul>
+          </details>
           <div class="featured-links">
             <a class="btn btn-primary" href="https://chronoroam.app" target="_blank" rel="noopener noreferrer">Visit chronoroam.app</a>
             <!-- Placeholder until the App Store review is done: swap for <a class="btn btn-ghost" href="APP STORE LINK" ...>Download iPhone app</a> -->

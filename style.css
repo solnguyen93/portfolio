@@ -454,6 +454,34 @@ h3 {
   margin-top: 22px;
 }
 
+/* Collapsible technical details for engineers */
+.built {
+  max-width: 480px;
+  margin-top: 18px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.built summary {
+  width: fit-content;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.built summary:hover {
+  color: var(--accent-hover);
+}
+
+.built ul {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.built li + li {
+  margin-top: 6px;
+}
+
 .featured-links {
   display: flex;
   flex-wrap: wrap;
