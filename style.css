@@ -407,10 +407,11 @@ h3 {
   50% { transform: rotate(16deg); }
 }
 
+/* Top-aligned so the phone stays put when "How it's built" opens */
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: center;
+  align-items: start;
   gap: 56px;
 }
 
