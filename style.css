@@ -483,6 +483,12 @@ h3 {
   margin-top: 6px;
 }
 
+.built-source {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
 .featured-links {
   display: flex;
   flex-wrap: wrap;
