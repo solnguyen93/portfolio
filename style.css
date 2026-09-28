@@ -462,8 +462,9 @@ h3 {
 }
 
 /* iPhone-style frame around the live demo, colors sampled from a
-   burgundy iPhone Pro. The display is laid out at real iPhone size
-   (390x844 points) and scaled to 80% on normal-height screens. */
+   burgundy iPhone Pro. The app fills the whole 390x844 iPhone screen
+   (no Dynamic Island, so nothing covers it) and is scaled to 80% on
+   normal-height screens. */
 .phone {
   --frame: #5d383f;
   --frame-light: #8e656d;
@@ -520,33 +521,6 @@ h3 {
   height: 844px;
   transform: scale(var(--scale));
   transform-origin: 0 0;
-}
-
-.phone-status {
-  position: relative;
-  flex-shrink: 0;
-  height: 54px;
-  background: #f4ecdb;
-}
-
-.phone-time {
-  position: absolute;
-  left: 44px;
-  top: 17px;
-  font-size: 17px;
-  font-weight: 600;
-  color: #111;
-}
-
-.phone-island {
-  position: absolute;
-  left: 50%;
-  top: 11px;
-  width: 124px;
-  height: 36px;
-  background: #000;
-  border-radius: 20px;
-  transform: translateX(-50%);
 }
 
 .phone-viewport {
