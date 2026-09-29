@@ -100,7 +100,7 @@
           <h2 class="featured-name">ChronoRoam</h2>
           <p class="featured-meaning"><strong>Chrono</strong> for time, <strong>roam</strong> for travel.</p>
           <p class="featured-desc">A trip planner built around your days. Map out every day down to the minute or keep it loose, even add a flight you haven't booked yet. Name each day, like "Disneyland Day" or "Jet Lag Rest Day", so you know what today's about at a glance.</p>
-          <p class="featured-desc">Save things you want to do, eat or buy, then move them onto a day. Every day shows the weather for wherever you'll be, worked out automatically from your flights and hotels, so the beach day can dodge the rain.</p>
+          <p class="featured-desc">Save things you want to do, eat or buy, then move them onto a day. Every day shows the weather for wherever you'll be, worked out automatically from your flights and hotels: what it's usually like months ahead, then the real forecast as the day gets close. So the beach day can dodge the rain.</p>
           <p class="featured-desc">Pack with one simple checklist or bag by bag, so when you land at 11pm you know exactly which suitcase has the toothbrush.</p>
           <p class="featured-desc">Forward a booking email and ChronoRoam fills in the details. Get tips for where you're headed, like whether you need a visa or a plug adapter. Plan on your computer with the calendar view, then take it with you on your iPhone.</p>
           <ul class="skill-list">
@@ -114,6 +114,7 @@
               <li>Inbound email: a Cloudflare Email Worker parses the MIME message and posts it to a secret-authenticated webhook</li>
               <li>AI extraction runs on a low-cost model first, with deterministic checks for corrupted or incomplete output and a fallback to Claude</li>
               <li>Rank-based location inference for accurate per-day weather: flight arrival &gt; transit or directions &gt; hotel &gt; activity location, then carry-forward from the previous day, then first departure airport &gt; trip destinations &gt; place name in the trip title; late arrivals count from the next day, and geocoder matches more than 500 km from higher-ranked signals are rejected</li>
+              <li>Real forecasts inside Open-Meteo's ~16-day window; beyond it, a cached 3-year same-day average labeled as typical weather</li>
               <li>Trip titles are matched against an offline set of ~1,750 place names before a single geocoding call, so unresolvable titles cost no network requests</li>
               <li>Custom pointer-event drag and drop: long-press reordering with a drop-preview line, an edge auto-scroll loop, and background polling paused mid-drag</li>
               <li>Destination tips and flight, geocoding and weather lookups are cached server-side and shared across users</li>
