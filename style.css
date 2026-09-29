@@ -500,6 +500,39 @@ h3 {
    burgundy iPhone Pro. The app fills the whole 390x844 iPhone screen
    (no Dynamic Island, so nothing covers it) and is scaled to 80% on
    normal-height screens. */
+.phone-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone-caption {
+  max-width: calc(390px * var(--scale, 0.8));
+  margin: 0;
+  font-size: 13px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.phone-caption a {
+  font-weight: 600;
+}
+
+.phone-caption-link {
+  font: inherit;
+  font-weight: 600;
+  color: var(--accent);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.phone-caption-link:hover {
+  color: var(--accent-hover);
+}
+
 .phone {
   --frame: #5d383f;
   --frame-light: #8e656d;
@@ -615,7 +648,7 @@ h3 {
     transform: rotate(135deg);
   }
 
-  .phone {
+  .phone-wrap {
     display: none;
   }
 }

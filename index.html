@@ -124,19 +124,22 @@
           </div>
         </div>
 
-        <div class="phone" aria-label="Live ChronoRoam demo">
-          <span class="phone-btn phone-btn-action"></span>
-          <span class="phone-btn phone-btn-vol-up"></span>
-          <span class="phone-btn phone-btn-vol-down"></span>
-          <span class="phone-btn phone-btn-side"></span>
-          <div class="phone-screen">
-            <div class="phone-display">
-              <div class="phone-viewport">
-                <p class="phone-loading">Loading ChronoRoam&hellip;</p>
-                <iframe data-src="https://chronoroam.app" title="ChronoRoam live demo" loading="lazy"></iframe>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="Live ChronoRoam demo">
+            <span class="phone-btn phone-btn-action"></span>
+            <span class="phone-btn phone-btn-vol-up"></span>
+            <span class="phone-btn phone-btn-vol-down"></span>
+            <span class="phone-btn phone-btn-side"></span>
+            <div class="phone-screen">
+              <div class="phone-display">
+                <div class="phone-viewport">
+                  <p class="phone-loading">Loading ChronoRoam&hellip;</p>
+                  <iframe data-src="https://chronoroam.app" title="ChronoRoam live demo" loading="lazy"></iframe>
+                </div>
               </div>
             </div>
           </div>
+          <p class="phone-caption">That's the real sign-in screen &mdash; <button type="button" class="phone-caption-link" id="phone-demo-btn">Click to log into Testuser1</button></p>
         </div>
       </div>
     </div>
@@ -334,6 +337,13 @@
   if (window.matchMedia('(min-width: 900px)').matches) {
     document.querySelectorAll('iframe[data-src]').forEach(function (f) { f.src = f.dataset.src; });
   }
+
+  // Swaps the SAME phone-sim iframe (not a new tab) from the real sign-in screen over to the
+  // demo account, so a visitor sees the actual auth flow first and only skips it on purpose.
+  document.getElementById('phone-demo-btn')?.addEventListener('click', function () {
+    var iframe = document.querySelector('.phone-viewport iframe');
+    if (iframe) iframe.src = 'https://chronoroam.app/#/demo';
+  });
 </script>
 
 </body>
