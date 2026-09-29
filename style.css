@@ -302,7 +302,9 @@ h3 {
   font-weight: 600;
 }
 
+/* "Source on GitHub" always sits on the right of the card footer */
 .project-link-secondary {
+  margin-left: auto;
   color: var(--text-muted);
 }
 
