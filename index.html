@@ -161,10 +161,10 @@
               <ul>
                 <li>React and Material UI frontend; speech is turned into text by the browser's built-in Web Speech API (Chrome or Safari)</li>
                 <li>Node.js/Express API on Render with a Neon PostgreSQL database</li>
-                <li>Only text reaches the server; VigilKura never records or stores audio</li>
-                <li>Email alerts through the Gmail API (send-only access), with a minimum gap between alerts to avoid spam</li>
+                <li>Speech-to-text runs in the browser, so the API only ever receives text and no audio is stored</li>
+                <li>Email goes through the Gmail API over HTTPS with a send-only OAuth scope, since Render's free tier blocks SMTP; alerts are rate-limited per child</li>
                 <li>A reload and a closed tab look the same to the browser, so the page reports leaving with <code>navigator.sendBeacon</code> and the server waits 45 seconds: a reload resumes the same session, otherwise the session ends and the parent gets a "Monitoring was interrupted" email</li>
-                <li>Transcripts can be translated into the parent's language with OpenAI when a session ends</li>
+                <li>Transcripts are translated with OpenAI in batches of 40 lines using JSON output, and each batch is checked line for line so the translation stays aligned with the original</li>
               </ul>
             </details>
           </div>
@@ -182,10 +182,10 @@
             <details class="built">
               <summary>How it's built</summary>
               <ul>
-                <li>React and Material UI frontend; Node.js/Express API with PostgreSQL, hosted on Render</li>
-                <li>Each item stores the item it sits inside, and recursive functions rebuild the list as a tree; deleting an item removes everything inside it</li>
-                <li>Accounts with bcrypt-hashed passwords and JWT sign-in; checklists can be shared with other users</li>
-                <li>Weather forecasts from Visual Crossing and currency exchange rates from ExchangeRate-API</li>
+                <li>React and Material UI frontend; Node.js/Express REST API with PostgreSQL</li>
+                <li>Nested items are stored as an adjacency list (<code>parent_item_id</code>) and rebuilt into a tree recursively; deletes cascade recursively through descendants</li>
+                <li>bcrypt password hashing and JWT auth; a <code>user_checklists</code> join table with owner/shared roles controls who can edit, share or delete</li>
+                <li>Integrates the Visual Crossing, ExchangeRate-API and Restful Countries APIs</li>
               </ul>
             </details>
           </div>
@@ -203,9 +203,9 @@
               <summary>How it's built</summary>
               <ul>
                 <li>Python and Flask app with server-rendered Jinja pages and vanilla JavaScript</li>
-                <li>Live flight offers and prices from the Amadeus API, with the server handling its OAuth sign-in</li>
-                <li>Destination weather forecasts from Visual Crossing; prices converted from euros with ExchangeRate-API</li>
-                <li>PostgreSQL through SQLAlchemy; accounts with bcrypt-hashed passwords and Flask-WTF forms let users save flights</li>
+                <li>Flight offers from the Amadeus API; the server handles the OAuth client-credentials token so secrets stay off the client</li>
+                <li>Visual Crossing for destination forecasts and ExchangeRate-API to convert EUR fares</li>
+                <li>PostgreSQL via Flask-SQLAlchemy models; session-based auth with bcrypt hashing and CSRF-protected Flask-WTF forms</li>
               </ul>
             </details>
           </div>
