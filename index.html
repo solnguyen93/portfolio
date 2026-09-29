@@ -118,6 +118,8 @@
               <li>Trip titles are matched against an offline set of ~1,750 place names before a single geocoding call, so unresolvable titles cost no network requests</li>
               <li>Custom pointer-event drag and drop: long-press reordering with a drop-preview line, an edge auto-scroll loop, and background polling paused mid-drag</li>
               <li>Shared cache-first lookups: every external lookup (AI trip tips, flights, geocoding, weather) checks stored results first and only calls the AI or API on a cache miss, so each answer is fetched once and reused by every user and cost per user falls as usage grows; weather is keyed to ~11 km grid cells to raise the hit rate, and "no result" answers are cached too</li>
+              <li>A low-cost model (~$0.000007 per call) first maps differently worded trip titles to one destination key, so "Tokyo Trip" and "Tokyo 2026" share a single cached Trip Tips answer instead of each paying for a search-grounded call</li>
+              <li>One weather cache feeds per-day weather, the home comparison and multi-city trips; static data like outlet types and airport coordinates is bundled rather than fetched</li>
               <li>Flight lookups fall back across three providers (AeroDataBox, AviationStack, then GPT with web search), with monthly quota tracking that cache hits never consume</li>
               <li>Payments through Stripe (web) and Apple In-App Purchase (iOS), both verified on the server before unlocking</li>
               <li>Membership-based access, guest accounts that merge into a real account on sign-in, and free-trial abuse prevention by email and device ID</li>
