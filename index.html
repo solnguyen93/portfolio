@@ -113,7 +113,7 @@
               <li>Node.js/Express REST API on Render with PostgreSQL through raw SQL (<code>pg</code>)</li>
               <li>Inbound email: a Cloudflare Email Worker parses the MIME message and posts it to a secret-authenticated webhook</li>
               <li>AI extraction runs on a low-cost model first, with deterministic checks for corrupted or incomplete output and a fallback to Claude</li>
-              <li>Rank-based location inference for accurate per-day weather: flight arrivals outrank transit and hotels, which outrank activities; location carries forward between days, late arrivals count from the next day, and geocoder matches more than 500 km from higher-ranked signals are rejected</li>
+              <li>Rank-based location inference for accurate per-day weather: flight arrival &gt; transit or directions &gt; hotel &gt; activity location, then carry-forward from the previous day, then first departure airport &gt; trip destinations &gt; place name in the trip title; late arrivals count from the next day, and geocoder matches more than 500 km from higher-ranked signals are rejected</li>
               <li>Trip titles are matched against an offline set of ~1,750 place names before a single geocoding call, so unresolvable titles cost no network requests</li>
               <li>Custom pointer-event drag and drop: long-press reordering with a drop-preview line, an edge auto-scroll loop, and background polling paused mid-drag</li>
               <li>Destination tips and flight, geocoding and weather lookups are cached server-side and shared across users</li>
