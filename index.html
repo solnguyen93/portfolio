@@ -163,7 +163,7 @@
                 <li>Node.js/Express API on Render with a Neon PostgreSQL database</li>
                 <li>Speech-to-text runs in the browser, so the API only ever receives text and no audio is stored</li>
                 <li>Email goes through the Gmail API over HTTPS with a send-only OAuth scope, since Render's free tier blocks SMTP; alerts are rate-limited per child</li>
-                <li>A reload and a closed tab look the same to the browser, so the page reports leaving with <code>navigator.sendBeacon</code> and the server waits 45 seconds: a reload resumes the same session, otherwise the session ends and the parent gets a "Monitoring was interrupted" email</li>
+                <li>A reload and a closed tab look the same to the browser, so the page reports leaving with <code>navigator.sendBeacon</code> and the server waits 30 seconds: a reload resumes the same session, otherwise the session ends and the parent gets a "Monitoring was interrupted" email</li>
                 <li>Transcripts are translated with OpenAI in batches of 40 lines using JSON output, and each batch is checked line for line so the translation stays aligned with the original</li>
               </ul>
             </details>
