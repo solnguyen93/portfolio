@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=22">
+<link rel="stylesheet" href="style.css?v=23">
 </head>
 <body>
 
@@ -156,6 +156,17 @@
             <p class="project-date">May 2026</p>
             <h3>VigilKura</h3>
             <p>A web app for parents that listens during a child's screen time, shows a live transcript, and sends an email if it hears words you've flagged. Parents can set a word list and time limit for each child, lock the browser tab in Kid Mode and look back at what was said. Works best in Chrome or Safari.</p>
+            <details class="built">
+              <summary>How it's built</summary>
+              <ul>
+                <li>React and Material UI frontend; speech is turned into text by the browser's built-in Web Speech API (Chrome or Safari)</li>
+                <li>Node.js/Express API on Render with a Neon PostgreSQL database</li>
+                <li>Only text reaches the server; VigilKura never records or stores audio</li>
+                <li>Email alerts through the Gmail API (send-only access), with a minimum gap between alerts to avoid spam</li>
+                <li>Kid Mode blocks the back button, resumes after a reload and needs a PIN to stop; parents are emailed if the tab is closed</li>
+                <li>Transcripts can be translated into the parent's language with OpenAI when a session ends</li>
+              </ul>
+            </details>
           </div>
           <div class="project-card-footer">
             <a class="project-link" href="https://vigilkura.onrender.com/" target="_blank" rel="noopener noreferrer">Visit app &rarr;</a>
