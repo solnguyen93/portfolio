@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=23">
+<link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
 
@@ -155,7 +155,7 @@
           <div class="project-card-body">
             <p class="project-date">May 2026</p>
             <h3>VigilKura</h3>
-            <p>A web app for parents that listens during a child's screen time, shows a live transcript, and sends an email if it hears words you've flagged. Parents can set a word list and time limit for each child, lock the browser tab in Kid Mode and look back at what was said. Works best in Chrome or Safari.</p>
+            <p>A web app for parents that listens during a child's screen time, shows a live transcript, and sends an email if it hears words you've flagged. Parents can set a word list and time limit for each child, switch on Kid Mode, which blocks the back button and needs a PIN to stop, and look back at what was said. Works best in Chrome or Safari.</p>
             <details class="built">
               <summary>How it's built</summary>
               <ul>
@@ -179,6 +179,15 @@
             <p class="project-date">Jun 2024</p>
             <h3>TripCheck</h3>
             <p>A packing checklist where you can put items inside other items, like a toiletry bag inside a suitcase, so your list is easier to organize and search than a notes app.</p>
+            <details class="built">
+              <summary>How it's built</summary>
+              <ul>
+                <li>React and Material UI frontend; Node.js/Express API with PostgreSQL, hosted on Render</li>
+                <li>Each item stores the item it sits inside, and recursive functions rebuild the list as a tree; deleting an item removes everything inside it</li>
+                <li>Accounts with bcrypt-hashed passwords and JWT sign-in; checklists can be shared with other users</li>
+                <li>Weather forecasts from Visual Crossing and currency exchange rates from ExchangeRate-API</li>
+              </ul>
+            </details>
           </div>
           <div class="project-card-footer">
             <a class="project-link" href="https://github.com/solnguyen93/CapstoneTwo-TripCheck" target="_blank" rel="noopener noreferrer">Source on GitHub &rarr;</a>
@@ -190,6 +199,15 @@
             <p class="project-date">Nov 2023</p>
             <h3>FlightCast</h3>
             <p>A flight search app that shows flight options and prices alongside the weather forecast for your destination, all in one place.</p>
+            <details class="built">
+              <summary>How it's built</summary>
+              <ul>
+                <li>Python and Flask app with server-rendered Jinja pages and vanilla JavaScript</li>
+                <li>Live flight offers and prices from the Amadeus API, with the server handling its OAuth sign-in</li>
+                <li>Destination weather forecasts from Visual Crossing; prices converted from euros with ExchangeRate-API</li>
+                <li>PostgreSQL through SQLAlchemy; accounts with bcrypt-hashed passwords and Flask-WTF forms let users save flights</li>
+              </ul>
+            </details>
           </div>
           <div class="project-card-footer">
             <a class="project-link" href="https://github.com/solnguyen93/CapstoneOne-FlightCast" target="_blank" rel="noopener noreferrer">Source on GitHub &rarr;</a>
