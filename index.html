@@ -124,6 +124,7 @@
               <li>Flight lookups fall back across three providers (AeroDataBox, AviationStack, then GPT with web search), with monthly quota tracking that cache hits never consume</li>
               <li>Credit purchases through Stripe (web) and Apple In-App Purchase (iOS), both verified on the server before credits are added</li>
               <li>Per-member packlist links on shared trips: each link is saved for one person and marked "everyone" or "only me", so one member can unlink or swap a list without changing anyone else's view, and new members get only the "everyone" lists</li>
+              <li>Live updates on shared trips and packlists with server-sent events: after a change is saved, the server tells everyone else who has it open, and their page reloads it within about a second; connections open only for shared items</li>
               <li>Username invites with accept/decline on Home and an email notice; declining deletes the invite so the person can be invited again</li>
               <li>Membership-based access, guest accounts that merge into a real account on sign-in, and abuse prevention that stops deleted accounts from re-claiming free credits (by email and device ID)</li>
             </ul>
